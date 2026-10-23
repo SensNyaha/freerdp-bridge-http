@@ -1,0 +1,35 @@
+{
+  "name": "@freerdp-bridge/http",
+  "version": "0.2.4",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./browser": {
+      "types": "./dist/browser.d.ts",
+      "import": "./dist/browser.js"
+    }
+  },
+  "dependencies": {
+    "fastify": "5.12.5",
+    "@freerdp-bridge/api": "0.2.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SensNyaha/freerdp-bridge-http.git"
+  },
+  "scripts": {
+    "build": "tsc -b"
+  }
+}
