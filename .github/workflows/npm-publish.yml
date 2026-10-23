@@ -30,7 +30,7 @@ jobs:
           persist-credentials: false
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
         with:
-          node-version: "24.21.0"
+          node-version: '24.21.0'
           package-manager-cache: false
       - run: npm install --global npm@11.19.0 --ignore-scripts --no-audit --no-fund --logs-max=0
       - run: node --test release-tools/guards.test.mjs
@@ -46,7 +46,7 @@ jobs:
   publish:
     needs: validate
     runs-on: ubuntu-24.04
-    timeout-minutes: 20
+    timeout-minutes: 45
     permissions:
       contents: read
       id-token: write
@@ -57,7 +57,7 @@ jobs:
           persist-credentials: false
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
         with:
-          node-version: "24.21.0"
+          node-version: '24.21.0'
           package-manager-cache: false
       - run: npm install --global npm@11.19.0 --ignore-scripts --no-audit --no-fund --logs-max=0
       - run: node release-tools/run.mjs fetch

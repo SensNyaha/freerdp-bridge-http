@@ -7,9 +7,11 @@ staging ниже сохранены, но staging сам по себе не ус
 
 Текущая приёмка: **0.2.2 полностью опубликован**, точные публичные bytes и
 свежие Windows/Linux registry-only consumers проходят
-([iteration 437](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.2.4/docs/ITERATION_437.md)). **0.2.3** публичен только в части двух
+([iteration 437](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.2.5/docs/ITERATION_437.md)). **0.2.3** публичен только в части двух
 runtimes; семь JS stages остаются pending. **0.2.4** принят локально с десятью
-точными архивами ([iteration 438](ITERATION_438.md)), но не опубликован.
+точными архивами ([iteration 438](ITERATION_438.md)) и полностью опубликован:
+10/10 public integrity, пять GitHub Releases/workflows и четыре чистых
+Windows/Linux registry-only consumers проходят ([iteration 441](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.2.5/docs/ITERATION_441.md)).
 Исторические pending checkpoints ниже не заменяют этот текущий статус.
 
 ## Почему публикуются общие JS-пакеты
@@ -36,7 +38,7 @@ express adapter → http → тот же общий граф
 adapter в чужом проекте не завершится. При `pnpm pack` workspace-ссылки
 превращаются в точные product versions; `workspace:*` не является требованием
 к проекту потребителя. Общая версия всех bridge-пакетов следует принятой
-[version policy](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.2.4/docs/VERSIONING.md), даже когда код отдельного слоя не менялся.
+[version policy](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.2.5/docs/VERSIONING.md), даже когда код отдельного слоя не менялся.
 
 Пример уже опубликованного 0.2.1 для Linux:
 
@@ -57,7 +59,7 @@ Runtime — отдельная **явная** platform dependency; JS adapter н
 ## Новый принятый набор 0.2.3
 
 node:http/node:https 0.2.3 проходит aligned release-приёмку;
-[проверки и accepted digests](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.2.4/docs/ITERATION_433.md). Девять точных архивов находятся
+[проверки и accepted digests](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.2.5/docs/ITERATION_433.md). Девять точных архивов находятся
 в `build/release-432-archives/`: два runtime, protocol/config/node/api,
 fastify/nestjs/http. Все содержат root README и проходят exact external
 consumers/reinstall, native/full checks, versioned actual RDP и npm dry-run.
@@ -69,7 +71,7 @@ node scripts/test-http-package.mjs --archives build/release-432-archives
 
 ## Предыдущий принятый набор 0.2.2: staging
 
-NestJS 0.2.2 проходит aligned release-приёмку; [полные проверки и SHA-256](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.2.4/docs/ITERATION_429.md).
+NestJS 0.2.2 проходит aligned release-приёмку; [полные проверки и SHA-256](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.2.5/docs/ITERATION_429.md).
 В `build/release-428-archives/` находятся восемь точных архивов: два runtime,
 protocol, config, node, api, fastify и nestjs. Все содержат корневой README,
 проходят bounded pack audit, внешний Windows/Linux npm consumer и official npm
@@ -129,9 +131,9 @@ Fastify 0.2.1 принят в локальном `v0.2.1`. Последующе�
 `dist.integrity` каждого совпадает с принятым архивом.
 Свежие registry-only consumers на Windows и Linux проходят strict TypeScript,
 same-port HTTP/WS, fake binary media, настоящий native TLS-отказ и joined cleanup.
-[Полная приёмка публикации и ссылки на пакеты](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.2.4/docs/ITERATION_426.md).
-История предыдущих 2FA отказов — в [отчёте 424](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.2.4/docs/ITERATION_424.md),
-проверки README и предыдущее состояние частичной публикации — в [425](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.2.4/docs/ITERATION_425.md).
+[Полная приёмка публикации и ссылки на пакеты](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.2.5/docs/ITERATION_426.md).
+История предыдущих 2FA отказов — в [отчёте 424](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.2.5/docs/ITERATION_424.md),
+проверки README и предыдущее состояние частичной публикации — в [425](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.2.5/docs/ITERATION_425.md).
 
 По [документации npm](https://docs.npmjs.com/requiring-2fa-for-package-publishing-and-settings-modification/)
 создание/публикация пакетов требует интерактивной 2FA либо granular access
@@ -190,8 +192,8 @@ README при этом должно быть актуально для конк�
 | 6 | `freerdp-bridge-api-0.2.1.tgz` |
 | 7 | `freerdp-bridge-fastify-0.2.1.tgz` |
 
-SHA-256 native-архивов записаны в [423](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.2.4/docs/ITERATION_423.md), пяти неизменённых
-JS-архивов — в [422](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.2.4/docs/ITERATION_422.md). Локальный
+SHA-256 native-архивов записаны в [423](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.2.5/docs/ITERATION_423.md), пяти неизменённых
+JS-архивов — в [422](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.2.5/docs/ITERATION_422.md). Локальный
 `build/release-423-artifact-audit.json` дополнительно содержит SHA-512 каждого
 архива, а `build/release-423-npm-dry-run.json` подтверждает соответствие npm
 integrity. Нельзя заменять уже опубликованную версию другими байтами.
