@@ -1,6 +1,6 @@
 {
   "name": "freerdp-bridge-http-delivery",
-  "version": "0.2.5",
+  "version": "0.3.0",
   "private": true,
   "type": "module",
   "license": "MIT",
@@ -24,7 +24,7 @@
     "@types/node": "24.10.0"
   },
   "optionalDependencies": {
-    "@freerdp-bridge/runtime-win32-x64": "0.2.5",
-    "@freerdp-bridge/runtime-linux-x64-gnu": "0.2.5"
+    "@freerdp-bridge/runtime-win32-x64": "0.3.0",
+    "@freerdp-bridge/runtime-linux-x64-gnu": "0.3.0"
   }
 }

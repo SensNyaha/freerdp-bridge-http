@@ -3,7 +3,7 @@
 Запрос пользователя закрепляет Fastify 0.2.1, NestJS 0.2.2, node:http 0.2.3
 и Express 0.2.4. Каждый adapter использует тот же session/native engine;
 выбор framework не добавляет новую RDP/device возможность. Подтверждённые
-версии, публикация и pending gates перечислены в [TODO](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.2.5/TODO.md).
+версии, публикация и pending gates перечислены в [TODO](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.3.0/TODO.md).
 
 | Приложение | Выбранный вариант | Основное условие |
 | --- | --- | --- |
@@ -56,8 +56,8 @@ native runtime своей ОС той же product version. Общие protocol/
 adapter, но отдельных npm-команд для них не нужно.
 [Объяснение графа](NPM_PUBLISHING.md#почему-публикуются-общие-js-пакеты).
 
-Реальные guides: [Fastify](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.2.5/docs/FASTIFY_USAGE.md), [NestJS](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.2.5/docs/NESTJS_USAGE.md),
-[node:http/HTTPS](NODE_HTTP_USAGE.md), [Express](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.2.5/docs/EXPRESS_USAGE.md).
+Реальные guides: [Fastify](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.3.0/docs/FASTIFY_USAGE.md), [NestJS](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.3.0/docs/NESTJS_USAGE.md),
+[node:http/HTTPS](NODE_HTTP_USAGE.md), [Express](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.3.0/docs/EXPRESS_USAGE.md).
 Общие [identity/Cookie/Origin границы](HOST_AUTHENTICATION.md) сохраняются
 независимо от framework. Не считайте Express session middleware, Nest guard
 или доверие к forwarded header готовой авторизацией сырых bridge upgrades.

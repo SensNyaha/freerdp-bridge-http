@@ -1,11 +1,11 @@
 # @freerdp-bridge/http
 
-This repository contains the 0.2.5 library source under package/ and its independent Node.js 24 test harness.
+This repository contains the 0.3.0 library source under package/ and its independent Node.js 24 test harness.
 
 Install the published library and an explicit native runtime for the server OS. Shared JS modules install transitively.
 
 ```sh
-npm install @freerdp-bridge/http@0.2.5 @freerdp-bridge/runtime-linux-x64-gnu@0.2.5
+npm install @freerdp-bridge/http@0.3.0 @freerdp-bridge/runtime-linux-x64-gnu@0.3.0
 ```
 
 Windows x64 selects runtime-win32-x64 of the same version. Public availability is a separate release gate; do not infer it from this source version.
