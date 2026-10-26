@@ -5,13 +5,14 @@
 **`@freerdp-bridge`**. Это разные пространства имён. Очередь интерактивных
 approve остановлена по просьбе пользователя; автоматически её не возобновлять.
 
-Текущий результат: все десять пакетов **0.2.5** публичны с точным accepted
+Текущий результат: все десять пакетов **0.3.0** публичны с точным accepted
 integrity; все пять OIDC workflows и четыре чистых Windows/Linux consumers
-проходят. Express впервые выполняет реальный OIDC write без браузерного 2FA.
-[Приёмка npm](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.3.0/docs/ITERATION_456.md). В 0.2.4 девять имён уже публиковались через
+проходят. Все десять имён выпущены без браузерного 2FA.
+[Приёмка npm](RUNTIME_RECOVERY.md#030-public-delivery). Express впервые выполнял
+реальный OIDC write в [0.2.5](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.4.0/docs/ITERATION_456.md). В 0.2.4 девять имён уже публиковались через
 OIDC, а Express проходил единственный отдельно разрешённый bootstrap approve;
 его прежний workflow только пропускал совпадающую версию.
-[Историческая приёмка](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.3.0/docs/history/iterations/401-450.md#iteration-441).
+[Историческая приёмка](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.4.0/docs/history/iterations/401-450.md#iteration-441).
 
 ## Выбранный механизм
 
@@ -91,7 +92,7 @@ npm trust github @freerdp-bridge/fastify --repo SensNyaha/freerdp-bridge-fastify
 проверяет все девять привязок. Пяти минутный skip-window позволяет выполнить
 это без новой очереди per-package browser approvals. Express создаётся
 отдельно как новое имя и ещё не имеет этой привязки.
-[Фактический checkpoint](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.3.0/docs/history/iterations/401-450.md#iteration-440). Dry-run сам по себе не является
+[Фактический checkpoint](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.4.0/docs/history/iterations/401-450.md#iteration-440). Dry-run сам по себе не является
 проверкой реальной OIDC identity.
 
 ## Исторические checkpoints до завершения iteration 441

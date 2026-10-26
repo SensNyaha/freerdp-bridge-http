@@ -2,12 +2,12 @@
 
 Адаптер принят в **0.2.3**, после отдельных feature/release branches и всех
 versioned native/consumer/RDP checks. [Контракт](NODE_HTTP_PLUGIN.md),
-[release-приёмка](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.3.0/docs/ITERATION_433.md). Текущий согласованный набор **0.2.5**
+[release-приёмка](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.4.0/docs/ITERATION_433.md). Текущий согласованный набор **0.3.0**
 полностью опубликован в npm и GitHub; чистые Windows/Linux consumers проходят
-strict TypeScript и 10/10. [Публикация](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.3.0/docs/ITERATION_456.md). Исторический 0.2.3
+strict TypeScript и 10/10. [Публикация](RUNTIME_RECOVERY.md#030-public-delivery). Исторический 0.2.3
 оставлен архивным по решению пользователя от 2026-10-24: его семь отсутствующих
-JS-пакетов не допубликовываются. Используйте опубликованный 0.2.5;
-[решение](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.3.0/docs/ITERATION_458.md).
+JS-пакетов не допубликовываются. Используйте опубликованный 0.3.0;
+[решение](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.4.0/docs/ITERATION_458.md).
 
 ## Роли и установка
 
@@ -22,10 +22,10 @@ Node.js-приложение владеет HTTP(S) listener, TLS, identity, р�
 FreeRDP не загружается в процесс Node. Внутренний Fastify router является
 зависимостью bridge; переводить свой сервер на Fastify не требуется.
 
-Установка опубликованного 0.2.5 на Linux x64/glibc:
+Установка опубликованного 0.3.0 на Linux x64/glibc:
 
 ```sh
-npm install @freerdp-bridge/http@0.2.5 @freerdp-bridge/runtime-linux-x64-gnu@0.2.5
+npm install @freerdp-bridge/http@0.3.0 @freerdp-bridge/runtime-linux-x64-gnu@0.3.0
 npm install --save-dev typescript@5.9.3 @types/node@24.10.0
 ```
 
@@ -195,7 +195,7 @@ await window.bridgeConnection.refresh();
 
 Audio/Clipboard/microphone имеют отдельные capabilities, server policy и browser
 permissions. Установка adapter не добавляет неподдерживаемые устройства.
-[Подробности reference browser](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.3.0/docs/FASTIFY_USAGE.md), [wire contract](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.3.0/PROTOCOL.md).
+[Подробности reference browser](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.4.0/docs/FASTIFY_USAGE.md), [wire contract](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.4.0/PROTOCOL.md).
 
 ## Завершение и диагностика
 
@@ -248,4 +248,4 @@ worker/runtime entries. Внешний tarball helper —
 локальный native пакет до его публикации. Только registry-only consumer после
 публичного integrity подтверждает доступность полного npm-графа. Текущие
 remaining gates описаны в [контракте](NODE_HTTP_PLUGIN.md).
-Feature-проверки и оставшиеся release/npm условия — [итерация 431](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.3.0/docs/history/iterations/401-450.md#iteration-431).
+Feature-проверки и оставшиеся release/npm условия — [итерация 431](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.4.0/docs/history/iterations/401-450.md#iteration-431).

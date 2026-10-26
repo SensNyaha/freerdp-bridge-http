@@ -1,10 +1,137 @@
 # Runtime recovery
 
+Shared `master` now includes both accepted branches; immutable annotated
+`v0.3.0` identifies merge `4ce88b3`. The following local-acceptance report was
+recorded before that merge. npm and standalone public delivery is now accepted;
+see [public delivery](#030-public-delivery).
+
+Post-tag review found a second delivery-only boundary: the standalone publisher
+still tested only `patch >= 5`, so it would reject 0.3.0/0.3.1 before uploading.
+New before/after cases reproduce both refusals and now verify the complete
+version against 0.2.5. The immutable product tag and ten archive bytes are
+preserved. Core OIDC has published both native runtimes; delayed registry
+visibility ended the first job after acceptance. A read-first continuation of
+that same job skips the now-public exact bytes and continues the shared JS set.
+
+An explicitly committed `packaging/standalone/release-resume.json` may route a
+trusted main/master publisher revision to the original retained hosted build.
+Its bounded schema fixes product version, source SHA and run ID. GitHub API
+proof must match the immutable annotated product tag, the same public source
+repository, the original standalone workflow and a completed successful run;
+plan, both Windows/Ubuntu installed build jobs and combined verification must
+all have succeeded. Tag-based dispatch is validation-only until this proof is
+available. Actions downloads only that run's SHA-prefixed artifacts and checks
+their digests; ordinary receipt verification still requires the exact seven
+files and `candidateOnly: false`. The publisher rechecks the API proof and
+source/tag binding before writing. Normal publication retains its exact current
+workflow SHA rule. The main/master, fixed repository, no-overwrite and
+manifest-last guards remain unchanged; no local fake CI environment or manual
+asset upload is introduced. A verified retained run can resume partial uploads;
+a fresh build still refuses them. Pointer/schema/fork/workflow/source/job drift
+and the actual CLI partial-plan path have explicit tests.
+
+This delivery repair was merged from `fix/standalone-minor-publication`
+(`275a7ea`); focused release
+tests pass **17/17** and workflow lint passes. Full current-source `pnpm check`
+passes Windows **1050/70 skips/0 failures** and Linux **1030/92 skips/0 failures**,
+recorded in `recovery-release-resume-{windows,linux}-check.log` under
+`build/current-validation`. Actual hosted retained-artifact publication is
+accepted below. No new RDP feature, dependency version, native binary or
+accepted npm archive is introduced.
+
+The first generated GitHub delivery export then exposed a test-packaging omission:
+`release-tools/native-smoke.mjs` copied its Fastify consumer and TLS fixture but
+omitted the consumer's `browser-port.mjs` dependency. Direct execution confirms
+`ERR_MODULE_NOT_FOUND` before native work. Copying the existing helper fixes the
+same smoke without changing the accepted product source, archive bytes or tag.
+The previous failed run leaves an intentional runtime junction, so the local
+repeat retires only that verified scratch alias before creating a fresh one.
+The source/native smoke and delivery guards pass; evidence is
+`recovery-release-native-smoke-{before,port-helper-fixed}.log` under
+`build/current-validation`. Current export tooling supplies this checked
+delivery helper separately from the immutable upstream product snapshot.
+
 The **0.3.0 recovery feature is locally accepted**: native/full workspace checks,
 exact npm consumers, both portable formats, Windows/Ubuntu/Astra/RED OS installed
 upgrades and eight actual desktop profiles pass. [Exact release acceptance and
-frozen archives](#030-local-release-acceptance). Merge/tag and real publication
-are next; public stable remains 0.2.5. The original full Stage 1 is still open.
+frozen archives](#030-local-release-acceptance). Merge/tag and publication are
+complete. The original full Stage 1 is still open.
+
+## Cross-principal acceptance
+
+2026-10-25: the named OS-principal lifecycle scope is accepted. Private commits
+`7a17eca`, `1838a05` and `5c4ac52` match tested public source `e7f2af2`.
+[Foundation CI](https://github.com/SensNyaha/freerdp-browser-bridge/actions/runs/40212301851)
+passes Windows, both Linux compiler profiles and sanitizers/fuzz;
+[exact GCC 8.3 CI](https://github.com/SensNyaha/freerdp-browser-bridge/actions/runs/40212301856)
+passes too. Each OS-principal step passes **2/2 with no skips**, separately from
+the ordinary suite, which deliberately skips that privileged scenario.
+Windows full foundation checks pass **995/127 skips**, Linux linked checks
+**1031/93 skips**, zero failures. Native CTest passes Windows foundation **21/21**
+and Linux linked GCC 8.3 **39/39**. Both hosted foundation profiles also pass the
+actual 100-worker lifecycle gate. [Bounded machine-readable evidence](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.4.0/docs/evidence/RUNTIME_RECOVERY_ISOLATION.json)
+binds all source inputs and final/retained-failure log hashes.
+
+This is additional acceptance of the existing 0.3.0 production boundary. No
+production package/dependency/native source, RDP capability, accepted npm archive
+or installer is changed or repacked. Malicious processes running as the same OS
+user, the broader installed-distro multi-user/security matrix and future
+drive/spool retention remain outside this accepted scope; full original Stage 1
+is not silently closed. Preparation failures below remain as history.
+
+`feature/stage1-cross-principal-isolation` adds an actual OS-principal boundary
+check for the remaining Stage 1 isolation gate. It does not change production
+admission or claim a new RDP capability. Two real Node/native workers and one
+schema-1 orphan share a readable runtime root; a different unprivileged OS
+principal must be able to list that root but must be denied session-directory
+listing, marker read/write, child creation, marker ownership and recovery.
+Both live workers must answer heartbeats after each foreign attempt. The
+legitimate owner then removes only the orphan and joins both workers' cleanup.
+
+Exact GCC 8.3 Linux passes this scenario under owner UID/GID 42420 and foreign
+UID/GID 42421, including an intentionally readable orphan counterexample that
+must fail the privacy probe. A separate private HOME is required for linked
+FreeRDP's settings initialization; its first missing-HOME failure is retained.
+The first fixture close also incorrectly treated its own stdin destruction as
+failure; breaking the command loop preserves all cleanup/exit assertions.
+Evidence is `cross-principal-linux-{first,preflight,home,counterexample}.log`
+under `build/current-validation`. This is native lifecycle, not connected RDP.
+
+Windows uses a one-shot scheduled task under actual
+[`NT AUTHORITY\LocalService`](https://learn.microsoft.com/en-us/windows/win32/services/localservice-account),
+without user passwords or new local accounts. The probe verifies its actual
+TokenUser SID. A fresh CI-only directory grants LocalService read/execute on the
+public probe/root and write access only to bounded nonsecret receipts; session
+directories retain the production owner/System boundary. Tasks have finite
+execution limits and only the newly registered task is retired. The probe is
+test-only and is never installed in npm or standalone payloads. Hosted Windows
+proof and full regression now pass as recorded above. Existing
+same-user DACL checks do not count as this second-principal evidence.
+
+First hosted run `40210047679` passed the ordinary Linux suite but its extra
+UID case could not load a fixture from the runner's private home. The corrected
+test stages only declared compiled workspace packages, installed TypeBox build,
+fixed native files and Node into a fresh public test subtree. It never copies a
+home directory, Git metadata or lab configuration and never changes ancestor
+permissions. Files/depth/bytes are bounded; the subtree is retired after joined
+cleanup. Exact GCC 8.3 passes with the original source checkout deliberately
+mode 0700, reproducing this boundary locally. The initial TypeBox manifest-export
+lookup failure is retained too. An unrelated Windows full-suite Edge `page.goto`
+3000 ms timeout passes its unchanged focused repeat; the first log remains.
+Full Linux linked checks pass **1031/93 skips/0 failures**; original Windows
+foundation CTest is **21/21**, linked Linux CTest **39/39**. Hosted proof and
+current Windows full-suite success were still pending at that checkpoint.
+
+The corrected Linux CI cases pass both compiler profiles. The next Windows CI
+reaches setup but inherits PowerShell 7 module lookup paths into the explicitly
+selected Windows PowerShell process, so `Set-Acl` cannot load its matching module.
+The fixture now selects only that process's standard `$PSHOME/Modules`; the host
+environment is unchanged. OS-principal checks run as named CI steps before the
+long browser suite, and matrix failures no longer cancel the other profiles.
+Local Windows full checks pass **995/127 skips/0 failures**. Actual Windows
+LocalService acceptance then passes in run `40212301851`; its first setup failure
+is retained. Windows' ordinary full hosted suite also passes **995/127 skips**,
+and each Linux foundation suite passes **930/194 skips**, zero failures.
 
 ## Preparation checkpoints
 
@@ -520,15 +647,69 @@ fixture lacked an empty `build/` scratch parent. After creating that parent,
 the focused cases pass **16/16** and the full command above exits successfully;
 no product code or test condition was changed to bypass those failures.
 
+## 0.3.0 public delivery
+
+2026-10-25: runtime recovery is completed and published. Private feature
+`51283d1`, release `1b92332` and delivery repairs `e071e11`/`275a7ea` are merged
+into shared `master`. Immutable private `v0.3.0` targets `4ce88b3`; its exported
+public product tag targets `9e8b229`. No accepted archive or tag was replaced.
+Public `main` includes the accepted candidate history through merge `c00ab44`;
+the `release/0.3.0` ref is retained as a merged historical reference.
+
+All ten npm versions are public at the exact accepted SHA-512 integrity.
+The five GitHub Releases and OIDC workflows succeed:
+
+| Repository | OIDC run |
+| --- | --- |
+| [Core](https://github.com/SensNyaha/freerdp-browser-bridge/releases/tag/v0.3.0) | [40189465774](https://github.com/SensNyaha/freerdp-browser-bridge/actions/runs/40189465774) |
+| [Fastify](https://github.com/SensNyaha/freerdp-bridge-fastify/releases/tag/v0.3.0) | [40191085664](https://github.com/SensNyaha/freerdp-bridge-fastify/actions/runs/40191085664) |
+| [NestJS](https://github.com/SensNyaha/freerdp-bridge-nestjs/releases/tag/v0.3.0) | [40191225980](https://github.com/SensNyaha/freerdp-bridge-nestjs/actions/runs/40191225980) |
+| [HTTP](https://github.com/SensNyaha/freerdp-bridge-http/releases/tag/v0.3.0) | [40191226417](https://github.com/SensNyaha/freerdp-bridge-http/actions/runs/40191226417) |
+| [Express](https://github.com/SensNyaha/freerdp-bridge-express/releases/tag/v0.3.0) | [40191962627](https://github.com/SensNyaha/freerdp-bridge-express/actions/runs/40191962627) |
+
+Four fresh registry-only consumer projects on each OS pass strict TypeScript,
+HTTP/HTTPS/WS integration, installed browser assets, actual native strict-TLS
+refusal and actual orphan runtime recovery. No checkout imports or local
+tarball overrides are used in these eight projects.
+
+The immutable-tag [registry-only standalone build](https://github.com/SensNyaha/freerdp-browser-bridge/actions/runs/40191077916)
+passes both portable formats, Windows Server 2025/Ubuntu 24.04 installed
+0.2.5-to-0.3.0 upgrades and combined verification. The corrected trusted-main
+[publisher](https://github.com/SensNyaha/freerdp-browser-bridge/actions/runs/40192059608)
+ships those exact retained files without rebuilding. All seven public files,
+the manifest and checksum list have been downloaded and independently verified.
+Final public DEB/RPM upgrades pass separately on Astra Linux 1.7.5 and RED OS 7.3:
+non-root service identity, old-worker retirement, native TLS, crash recovery,
+config-preserving reinstall and uninstall. These installed checks do not claim
+a real desktop; the eight accepted actual RDP profiles are recorded in local
+acceptance below.
+
+[Machine-readable public evidence](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.4.0/docs/evidence/RUNTIME_RECOVERY_0.3.0_PUBLIC.json)
+preserves the exact final hashes, successful workflows and safe local log hashes.
+The temporary retained-run pointer is retired after successful publication;
+ordinary future builds use current-source publication guards. Full original
+Stage 1/V1, multi-user isolation and the extended Node/addon sanitizer matrix
+remain open. No HTML clipboard implementation is included.
+
+Additional publisher-main source CI first exposed an unchanged Linux stream
+lifecycle fixture: a nonblocking codec-selection attempt returned the supported
+`busy` result while the test immediately required `accepted`. The first failed
+log is retained in public evidence. One repeat of its failed/cancelled jobs
+passes Windows and both Linux compiler profiles on the same source; sanitizers
+and fuzz also pass. No assertion, deadline or product binary was changed. The
+immutable product-tag source CI had already passed all its jobs. The final
+documentation merge changes no product, native, test or workflow input.
+
 ## 0.3.0 local release acceptance
 
 2026-10-25: all local, candidate installer, named Astra/RED OS upgrade and eight
-actual desktop gates above pass. [Machine-readable evidence](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.3.0/docs/evidence/RUNTIME_RECOVERY_0.3.0.json)
+actual desktop gates above pass. [Machine-readable evidence](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.4.0/docs/evidence/RUNTIME_RECOVERY_0.3.0.json)
 binds the exact archives, native source, CI and profiles. Source CI succeeds on
 Windows/both Linux compiler profiles, sanitizers/fuzz and exact GCC 8.3.
 The first Windows browser timeout and Astra issuer-clock failure remain recorded.
 This accepts the recovery feature delivery scope; full Stage 1 remains open.
-Merge/tag and real npm/registry-only standalone publication are separate next steps.
+This report precedes merge/tag and public delivery; their completed acceptance
+is recorded in [public delivery](#030-public-delivery).
 
 The following exact archives are frozen for this release; do not repack them.
 
