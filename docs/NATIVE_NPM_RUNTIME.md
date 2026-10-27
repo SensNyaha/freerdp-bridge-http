@@ -1,16 +1,16 @@
 # Native runtime в npm-проекте
 
 Native runtime принят вместе с Fastify **0.2.1**: все product manifests и
-нативные бинарники согласованы на 0.2.1. [Финальная приёмка](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.4.0/docs/ITERATION_424.md).
+нативные бинарники согласованы на 0.2.1. [Финальная приёмка](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.5.0/docs/ITERATION_424.md).
 Все семь пакетов опубликованы; integrity и новые registry-only проекты на
-Windows/Linux проверены в [426](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.4.0/docs/history/iterations/401-450.md#iteration-426).
+Windows/Linux проверены в [426](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.5.0/docs/history/iterations/401-450.md#iteration-426).
 Более ранние development-комплекты 0.2.0, их проверки и ограничения сохраняются
-в [итерации 420](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.4.0/docs/history/iterations/401-450.md#iteration-420) и [итерации 421](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.4.0/docs/history/iterations/401-450.md#iteration-421);
+в [итерации 420](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.5.0/docs/history/iterations/401-450.md#iteration-420) и [итерации 421](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.5.0/docs/history/iterations/401-450.md#iteration-421);
 они не переименовываются в релизные архивы 0.2.1.
 
-Текущий согласованный npm-набор — **0.3.0**: десять точных архивов публичны,
+Текущий согласованный npm-набор — **0.4.0**: десять точных архивов публичны,
 все четыре adapter проходят свежие Windows/Linux registry-only consumers.
-[Публикация](RUNTIME_RECOVERY.md#030-public-delivery). Ниже обычная установка использует этот набор;
+[Публикация](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.5.0/docs/CLIPBOARD_BROWSER.md#040-public-delivery). Ниже обычная установка использует этот набор;
 первоначальная приёмка 0.2.1 выше сохранена как история.
 
 ## Установка в приложении
@@ -25,19 +25,19 @@ CMake, compiler, system FreeRDP или сетевой `postinstall`. Node.js и 
 | `@freerdp-bridge/runtime-linux-x64-gnu` | Linux x64 с glibc; worker, IPC-only addon, process query, private DSOs, notices |
 | `@freerdp-bridge/runtime-win32-x64` | Windows x64; worker, private directory/resource helper, DLL/CRT, notices |
 
-Для опубликованного 0.3.0 выберите одну команду под ОС сервера:
+Для опубликованного 0.4.0 выберите одну команду под ОС сервера:
 
 ```sh
 # Linux x64 / glibc
-npm install fastify@5.12.5 @freerdp-bridge/fastify@0.3.0 @freerdp-bridge/runtime-linux-x64-gnu@0.3.0
+npm install fastify@5.12.5 @freerdp-bridge/fastify@0.4.0 @freerdp-bridge/runtime-linux-x64-gnu@0.4.0
 
 # Windows x64
-npm install fastify@5.12.5 @freerdp-bridge/fastify@0.3.0 @freerdp-bridge/runtime-win32-x64@0.3.0
+npm install fastify@5.12.5 @freerdp-bridge/fastify@0.4.0 @freerdp-bridge/runtime-win32-x64@0.4.0
 ```
 
 Для ещё неопубликованного development-снимка установите соответствующие локальные
 архивы, заменив также его JS workspace dependencies. Проверяющий helper делает это
-через overrides в отдельном проекте; [Fastify usage](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.4.0/docs/FASTIFY_USAGE.md).
+через overrides в отдельном проекте; [Fastify usage](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.5.0/docs/FASTIFY_USAGE.md).
 Runtime сейчас устанавливается явно рядом с adapter. Автоматическая установка
 через `optionalDependencies` ещё не подключена. Не считайте успешную установку
 одного JS adapter доказательством наличия native worker.
@@ -157,7 +157,7 @@ refusal. Успех fake media transport не заменяет browser decode/re
 
 Собственный bridge-код имеет MIT. Полный native пакет содержит зависимости с
 их отдельными условиями. Читайте `THIRD_PARTY_NOTICES.md`, `runtime/share/`
-licenses, port metadata и [SBOM](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.4.0/docs/SBOM.md). MIT не перелицензирует FreeRDP,
+licenses, port metadata и [SBOM](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.5.0/docs/SBOM.md). MIT не перелицензирует FreeRDP,
 libusb, codecs или Microsoft runtime. Этот инвентарь не заменяет provenance,
 подписи, upstream license review и требования конкретного deployment.
 LGPL-исходники и патчи сопровождают бинарники в том же npm-архиве; читайте
