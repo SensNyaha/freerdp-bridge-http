@@ -3,7 +3,7 @@
 Implemented on separate `feature/node-http-0.2.3`, after accepted NestJS 0.2.2.
 Implements SPECIFICATION §2.1/2.11/2.12 and §3.1/3.2 with ADR-001/005/007/008.
 The implementation and aligned 0.2.3 release checks are accepted through
-separate feature/release branches; [release evidence](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.5.0/docs/ITERATION_433.md).
+separate feature/release branches; [release evidence](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.6.0/docs/ITERATION_433.md).
 Registry publication remains separate. No `@freerdp-bridge/http@0.2.2` release
 is asserted. Prior tags/archives are immutable.
 
@@ -106,10 +106,10 @@ Actual installed-package Astra Linux 1.7.5 and RED OS 7.3 desktop profiles pass
 through automatic and manual upgrades with H.264 and JPEG: nonuniform output,
 confirmed resize/restoration, fresh-token reattach, host HTTP/diagnostics and
 joined cleanup. These use the accepted local native 0.2.2 archive, not a newly
-published runtime. [Evidence and retained failures](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.5.0/docs/history/iterations/401-450.md#iteration-431).
+published runtime. [Evidence and retained failures](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.6.0/docs/history/iterations/401-450.md#iteration-431).
 
 Subsequent aligned 0.2.3 native builds, nine exact archives, consumer/reinstall
-regressions and all eight versioned HTTP RDP profiles pass; [evidence](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.5.0/docs/ITERATION_433.md).
+regressions and all eight versioned HTTP RDP profiles pass; [evidence](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.6.0/docs/ITERATION_433.md).
 npm publication remains required. Fake media and native certificate fixtures
 remain distinct from actual desktop/device support.
 Original full V1/installer gates remain in TODO.
