@@ -1,0 +1,37 @@
+{
+  "schema": 1,
+  "kind": "post-release-documentation",
+  "productVersion": "0.7.0",
+  "stableTag": "v0.7.0",
+  "stableCommit": "f95a869a6d42a137c8c249fb01116328ebe5e905",
+  "upstreamDocumentationCommit": "4b994479e6c6344c43e4d2e169dca9d0a80358ff",
+  "coreDocumentationCommit": "df1de43da3ecd16293b94330fb7b3ff058d99c07",
+  "immutableReleaseUnchanged": true,
+  "documents": [
+    {
+      "path": "docs/NODE_HTTP_USAGE.md",
+      "bytes": 17573,
+      "sha256": "7ddb82d8e1a120ba3f15327018f2bb5bf3549a85392346f3673cce629d09a875"
+    },
+    {
+      "path": "docs/NATIVE_NPM_RUNTIME.md",
+      "bytes": 13902,
+      "sha256": "572184cc0540c8a63e3eda4e8119a4d2ba568ad8cbd5028eb91c2eac47ffd44f"
+    },
+    {
+      "path": "docs/NPM_PUBLISHING.md",
+      "bytes": 22156,
+      "sha256": "10b1b4a7de8f7c09d39515dad4c8ce1683ff44806e3aaf8a17d00b8eced5f8a3"
+    },
+    {
+      "path": "docs/NPM_TRUSTED_PUBLISHING.md",
+      "bytes": 10995,
+      "sha256": "e2436608755df74549a1327e44188894cd367d7b96e239ed5dc7cde6dcf32f47"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1866,
+      "sha256": "89ec4b0a69c0d0b2e2176be1d146ecc0827d6c48df782c0a930d6ff3435c1175"
+    }
+  ]
+}

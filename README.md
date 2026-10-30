@@ -1,5 +1,7 @@
 # @freerdp-bridge/http
 
+Version 0.7.0 is published on npm at the accepted integrity. Fresh Windows/Linux registry consumers and final standalone delivery pass. [Public acceptance](https://github.com/SensNyaha/freerdp-browser-bridge/blob/df1de43da3ecd16293b94330fb7b3ff058d99c07/docs/RELEASE_0_7_0.md#public-delivery). Immutable release tags and archive bytes remain unchanged.
+
 This repository contains the 0.7.0 library source under package/ and its independent Node.js 24 test harness.
 
 Install the published library and an explicit native runtime for the server OS. Shared JS modules install transitively.

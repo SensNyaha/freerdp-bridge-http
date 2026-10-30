@@ -2,20 +2,20 @@
 
 В 0.5.0 доступен отдельно включаемый буфер изображений. Именованные PNG-профили,
 явные действия браузера, общие лимиты и ограничения описаны в
-[image clipboard](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.7.0/docs/CLIPBOARD_BROWSER.md#versioned-050-image-application-acceptance).
+[image clipboard](https://github.com/SensNyaha/freerdp-browser-bridge/blob/df1de43da3ecd16293b94330fb7b3ff058d99c07/docs/CLIPBOARD_BROWSER.md#versioned-050-image-application-acceptance).
 
 В **0.6.0** управляемые файлы и RDP-диски включаются доверенной настройкой
 `sessions.files`. Файловый Ctrl+C/Ctrl+V остаётся отдельной задачей
-(`clipboardFiles: false`). [Файловый API и настройка](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.7.0/docs/FILES.md).
+(`clipboardFiles: false`). [Файловый API и настройка](https://github.com/SensNyaha/freerdp-browser-bridge/blob/df1de43da3ecd16293b94330fb7b3ff058d99c07/docs/FILES.md).
 
 Адаптер принят в **0.2.3**, после отдельных feature/release branches и всех
 versioned native/consumer/RDP checks. [Контракт](NODE_HTTP_PLUGIN.md),
-[release-приёмка](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.7.0/docs/ITERATION_433.md). Текущий согласованный набор **0.6.0**
+[release-приёмка](https://github.com/SensNyaha/freerdp-browser-bridge/blob/df1de43da3ecd16293b94330fb7b3ff058d99c07/docs/ITERATION_433.md). Текущий согласованный набор **0.6.0**
 полностью опубликован в npm и GitHub; чистые Windows/Linux consumers проходят
-strict TypeScript и 10/10. [Публикация](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.7.0/docs/RELEASE_0_6_0.md#public-delivery). Исторический 0.2.3
+strict TypeScript и 10/10. [Публикация](https://github.com/SensNyaha/freerdp-browser-bridge/blob/df1de43da3ecd16293b94330fb7b3ff058d99c07/docs/RELEASE_0_6_0.md#public-delivery). Исторический 0.2.3
 оставлен архивным по решению пользователя от 2026-10-24: его семь отсутствующих
 JS-пакетов не допубликовываются. Используйте опубликованный 0.6.0;
-[решение](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.7.0/docs/ITERATION_458.md).
+[решение](https://github.com/SensNyaha/freerdp-browser-bridge/blob/df1de43da3ecd16293b94330fb7b3ff058d99c07/docs/ITERATION_458.md).
 
 ## Роли и установка
 
@@ -33,7 +33,7 @@ FreeRDP не загружается в процесс Node. Внутренний
 Установка опубликованного 0.5.0 на Linux x64/glibc:
 
 ```sh
-npm install @freerdp-bridge/http@0.6.0 @freerdp-bridge/runtime-linux-x64-gnu@0.6.0
+npm install @freerdp-bridge/http@0.7.0 @freerdp-bridge/runtime-linux-x64-gnu@0.7.0
 npm install --save-dev typescript@5.9.3 @types/node@24.10.0
 ```
 
@@ -203,7 +203,7 @@ await window.bridgeConnection.refresh();
 
 Audio/Clipboard/microphone имеют отдельные capabilities, server policy и browser
 permissions. Установка adapter не добавляет неподдерживаемые устройства.
-[Подробности reference browser](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.7.0/docs/FASTIFY_USAGE.md), [wire contract](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.7.0/PROTOCOL.md).
+[Подробности reference browser](https://github.com/SensNyaha/freerdp-browser-bridge/blob/df1de43da3ecd16293b94330fb7b3ff058d99c07/docs/FASTIFY_USAGE.md), [wire contract](https://github.com/SensNyaha/freerdp-browser-bridge/blob/df1de43da3ecd16293b94330fb7b3ff058d99c07/PROTOCOL.md).
 
 ## Завершение и диагностика
 
@@ -256,4 +256,4 @@ worker/runtime entries. Внешний tarball helper —
 локальный native пакет до его публикации. Только registry-only consumer после
 публичного integrity подтверждает доступность полного npm-графа. Текущие
 remaining gates описаны в [контракте](NODE_HTTP_PLUGIN.md).
-Feature-проверки и оставшиеся release/npm условия — [итерация 431](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.7.0/docs/history/iterations/401-450.md#iteration-431).
+Feature-проверки и оставшиеся release/npm условия — [итерация 431](https://github.com/SensNyaha/freerdp-browser-bridge/blob/df1de43da3ecd16293b94330fb7b3ff058d99c07/docs/history/iterations/401-450.md#iteration-431).
