@@ -250,7 +250,7 @@ the ordinary suite, which deliberately skips that privileged scenario.
 Windows full foundation checks pass **995/127 skips**, Linux linked checks
 **1031/93 skips**, zero failures. Native CTest passes Windows foundation **21/21**
 and Linux linked GCC 8.3 **39/39**. Both hosted foundation profiles also pass the
-actual 100-worker lifecycle gate. [Bounded machine-readable evidence](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.6.0/docs/evidence/RUNTIME_RECOVERY_ISOLATION.json)
+actual 100-worker lifecycle gate. [Bounded machine-readable evidence](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.7.0/docs/evidence/RUNTIME_RECOVERY_ISOLATION.json)
 binds all source inputs and final/retained-failure log hashes.
 
 This is additional acceptance of the existing 0.3.0 production boundary. No
@@ -865,7 +865,7 @@ config-preserving reinstall and uninstall. These installed checks do not claim
 a real desktop; the eight accepted actual RDP profiles are recorded in local
 acceptance below.
 
-[Machine-readable public evidence](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.6.0/docs/evidence/RUNTIME_RECOVERY_0.3.0_PUBLIC.json)
+[Machine-readable public evidence](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.7.0/docs/evidence/RUNTIME_RECOVERY_0.3.0_PUBLIC.json)
 preserves the exact final hashes, successful workflows and safe local log hashes.
 The temporary retained-run pointer is retired after successful publication;
 ordinary future builds use current-source publication guards. Full original
@@ -884,7 +884,7 @@ documentation merge changes no product, native, test or workflow input.
 ## 0.3.0 local release acceptance
 
 2026-10-25: all local, candidate installer, named Astra/RED OS upgrade and eight
-actual desktop gates above pass. [Machine-readable evidence](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.6.0/docs/evidence/RUNTIME_RECOVERY_0.3.0.json)
+actual desktop gates above pass. [Machine-readable evidence](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.7.0/docs/evidence/RUNTIME_RECOVERY_0.3.0.json)
 binds the exact archives, native source, CI and profiles. Source CI succeeds on
 Windows/both Linux compiler profiles, sanitizers/fuzz and exact GCC 8.3.
 The first Windows browser timeout and Astra issuer-clock failure remain recorded.

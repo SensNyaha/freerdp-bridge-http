@@ -73,6 +73,6 @@ Host/proxy должны исключать Authorization, Cookie, session bodies
 из access logs. Redaction bridge не отменяет уже выполненный host/proxy logger.
 Browser permission и server capability/policy остаются разными проверками.
 
-Framework-specific wiring: [Fastify](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.6.0/docs/FASTIFY_USAGE.md), [NestJS](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.6.0/docs/NESTJS_USAGE.md),
+Framework-specific wiring: [Fastify](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.7.0/docs/FASTIFY_USAGE.md), [NestJS](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.7.0/docs/NESTJS_USAGE.md),
 [node:http](NODE_HTTP_USAGE.md). Полная исходная программа cookie/auth/device
-расширений и deployment acceptance остаётся в [TODO](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.6.0/TODO.md).
+расширений и deployment acceptance остаётся в [TODO](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.7.0/TODO.md).

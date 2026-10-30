@@ -8,11 +8,11 @@ approve остановлена по просьбе пользователя; а�
 Текущий результат: все десять пакетов **0.5.0** публичны с точным accepted
 integrity; все пять OIDC workflows и четыре чистых Windows/Linux consumers
 проходят. Все десять имён выпущены без браузерного 2FA.
-[Приёмка npm](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.6.0/docs/RELEASE_0_5_0.md#public-delivery). Express впервые выполнял
-реальный OIDC write в [0.2.5](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.6.0/docs/ITERATION_456.md). В 0.2.4 девять имён уже публиковались через
+[Приёмка npm](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.7.0/docs/RELEASE_0_5_0.md#public-delivery). Express впервые выполнял
+реальный OIDC write в [0.2.5](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.7.0/docs/ITERATION_456.md). В 0.2.4 девять имён уже публиковались через
 OIDC, а Express проходил единственный отдельно разрешённый bootstrap approve;
 его прежний workflow только пропускал совпадающую версию.
-[Историческая приёмка](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.6.0/docs/history/iterations/401-450.md#iteration-441).
+[Историческая приёмка](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.7.0/docs/history/iterations/401-450.md#iteration-441).
 
 ## Выбранный механизм
 
@@ -92,7 +92,7 @@ npm trust github @freerdp-bridge/fastify --repo SensNyaha/freerdp-bridge-fastify
 проверяет все девять привязок. Пяти минутный skip-window позволяет выполнить
 это без новой очереди per-package browser approvals. Express создаётся
 отдельно как новое имя и ещё не имеет этой привязки.
-[Фактический checkpoint](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.6.0/docs/history/iterations/401-450.md#iteration-440). Dry-run сам по себе не является
+[Фактический checkpoint](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.7.0/docs/history/iterations/401-450.md#iteration-440). Dry-run сам по себе не является
 проверкой реальной OIDC identity.
 
 ## Исторические checkpoints до завершения iteration 441

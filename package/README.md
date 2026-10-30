@@ -103,11 +103,40 @@ browser/RDP acceptance limits.
 Enable trusted server-side `sessions.files` limits to expose authenticated
 streaming file routes and select session-sandbox drives in session JSON.
 `thinclientDrives` is an alias for those descriptors, including read-only
-shares. Use matching 0.6.0 JS/native packages; published 0.5.0 does not
+shares. Use matching JS/native product versions; published 0.5.0 does not
 provide these file APIs. Session input cannot select an arbitrary host path.
 
 OS file-manager Ctrl+C/Ctrl+V remains deferred (`clipboardFiles: false`).
 See the [file policy, routes, framework examples and tested scope](https://github.com/SensNyaha/freerdp-browser-bridge/blob/v0.6.0/docs/FILES.md).
+
+## Host-device inventory in 0.7.0
+
+Version 0.7.0 adds this API; public 0.6.0 does not contain it. Keep JS/native
+versions matched. Until publication, use the complete verified local archives. It lists metadata on the application
+server; it does not list devices on the browser computer or redirect a device.
+
+```js
+import { resolve } from 'node:path';
+import { discoverHostDevices, resolveNativeRuntime } from '@freerdp-bridge/http';
+
+const worker = await resolveNativeRuntime({
+  runtimeRoot: resolve('.runtime/operator-inventory'),
+});
+const report = await discoverHostDevices(worker, {
+  classes: ['printers', 'smartcards', 'serial', 'parallel', 'usb'],
+  maxDevices: 16,
+});
+for (const group of report.classes)
+  console.log(group.kind, group.status, group.devices.length);
+```
+
+Use a private writable runtime directory and trusted operator access; no HTTP
+inventory route is added automatically. Each call creates and joins one fresh
+native worker without an RDP connection or credentials. The maximum is global
+across selected classes (1–128); `limit` means an incomplete snapshot and
+`available` may be empty. Handle `unavailable`, `denied`, `unsupported` and
+`failure` explicitly. IDs are snapshot metadata, not device-open authority;
+avoid exposing names/IDs in public logs. [Providers, bounds and tested scope](https://github.com/SensNyaha/freerdp-browser-bridge/blob/main/DEVICE_REDIRECTION.md#host-inventory-in-the-development-branch).
 
 ## Limitations
 

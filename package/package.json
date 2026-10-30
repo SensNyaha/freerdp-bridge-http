@@ -1,6 +1,6 @@
 {
   "name": "@freerdp-bridge/http",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "type": "module",
   "license": "MIT",
   "engines": {
@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "fastify": "5.12.5",
-    "@freerdp-bridge/api": "0.6.0"
+    "@freerdp-bridge/api": "0.7.0"
   },
   "repository": {
     "type": "git",
